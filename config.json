@@ -1,0 +1,31 @@
+{
+    "kafka": {
+        "bootstrap_servers": "localhost:29092"
+    },
+    "schema_registry": {
+        "url": "http://localhost:8081"
+    },
+    "producer": {
+        "start_user_id": 1,
+        "num_messages": 1000,
+        "num_producers": 3,
+        "topic": "transactions",
+        "schema_file": "transaction_schema.avsc"
+    },
+    "consumer": {
+        "transaction_job_backup": {
+            "num_consumers": 3,
+            "batch_size": 1000,
+            "topic": "transactions",
+            "subject_name": "transactions-value",
+            "output_dir": "transaction_job_backup"
+        },
+        "transaction_ml_features": {
+            "num_consumers": 3,
+            "batch_size": 1000,
+            "topic": "transactions",
+            "subject_name": "transactions-value",
+            "output_dir": "transaction_ml_features"
+        }
+    }
+}
