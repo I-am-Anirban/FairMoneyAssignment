@@ -1,0 +1,2 @@
+# FairMoneyAssignment
+Assignment for FairMoney
